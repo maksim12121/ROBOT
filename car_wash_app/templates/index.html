@@ -1,0 +1,134 @@
+{% extends "base.html" %}
+
+{% block title %}Автомойка "На1" - Главная{% endblock %}
+
+{% block content %}
+<header>
+    <div class="container">
+        <div class="header-content">
+            <a href="{{ url_for('index') }}" class="logo">
+                <i class="fas fa-car"></i>
+                Автомойка "На1"
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('index') }}" class="active">Главная</a></li>
+                    <li><a href="{{ url_for('services') }}">Услуги</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="container">
+        <h1>Профессиональная мойка вашего автомобиля</h1>
+        <p>Мы предлагаем полный спектр услуг по уходу за вашим автомобилем. Качество, скорость и доступные цены!</p>
+        <a href="{{ url_for('services') }}" class="btn">Наши услуги</a>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="section-title">
+            <h2>Наша автомойка</h2>
+        </div>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1507136566006-cfc505b114fc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1021&q=80" alt="Автомойка">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1620706857370-e1b9770e8bb1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1064&q=80" alt="Мойка автомобиля">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1599396362437-0ea61d8c9cfb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1074&q=80" alt="Чистка салона">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section reviews">
+    <div class="container">
+        <div class="section-title">
+            <h2>Отзывы клиентов</h2>
+        </div>
+        <div class="reviews-container">
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="reviewer">Александр Петров</div>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <div class="review-text">
+                    Отличная автомойка! Быстро, качественно и по доступной цене. Персонал вежливый и профессиональный. Буду рекомендовать друзьям!
+                </div>
+            </div>
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="reviewer">Мария Иванова</div>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+                <div class="review-text">
+                    Очень довольна результатом! Машина сияет как новая. Особенно понравилась химчистка салона - все пятна удалили, запах свежести.
+                </div>
+            </div>
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="reviewer">Дмитрий Смирнов</div>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                </div>
+                <div class="review-text">
+                    Хороший сервис, но в час пик приходится ждать. Качество мойки на высоте, цены приемлемые. Пользуюсь услугами регулярно.
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>О нас</h3>
+                <p>Автомойка "На1" - это современный комплекс услуг по уходу за вашим автомобилем. Мы работаем с 2015 года и заслужили доверие тысяч клиентов.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-vk"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-telegram"></i></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3>Контакты</h3>
+                <p><i class="fas fa-map-marker-alt"></i> г. Москва, ул. Автомойщиков, 15</p>
+                <p><i class="fas fa-phone"></i> +7 (495) 123-45-67</p>
+                <p><i class="fas fa-envelope"></i> info@na1-carwash.ru</p>
+            </div>
+            <div class="footer-column">
+                <h3>Часы работы</h3>
+                <p>Пн-Пт: 8:00 - 22:00</p>
+                <p>Сб-Вс: 9:00 - 20:00</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; {{ current_year }} Автомойка "На1". Все права защищены.</p>
+        </div>
+    </div>
+</footer>
+{% endblock %}
