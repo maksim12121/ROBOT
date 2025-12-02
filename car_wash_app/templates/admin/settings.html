@@ -1,0 +1,97 @@
+{% extends "admin/base.html" %}
+
+{% block title %}Настройки сайта - РОБОТ МОЙКА ГИДРА{% endblock %}
+
+{% block page_title %}Настройки сайта{% endblock %}
+
+{% block content %}
+<form method="POST" action="{{ url_for('admin_settings') }}">
+    <h3>Контактная информация</h3>
+    
+    <div class="form-group">
+        <label for="phone">Телефон *</label>
+        <input type="text" id="phone" name="phone" class="form-control" value="{{ settings.contact_info.phone }}" required>
+    </div>
+
+    <div class="form-group">
+        <label for="address">Адрес *</label>
+        <input type="text" id="address" name="address" class="form-control" value="{{ settings.contact_info.address }}" required>
+    </div>
+
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" class="form-control" value="{{ settings.contact_info.email }}">
+    </div>
+
+    <hr style="margin: 30px 0;">
+    
+    <h3>Время работы</h3>
+    
+    {% set days = {
+        'monday': 'Понедельник',
+        'tuesday': 'Вторник',
+        'wednesday': 'Среда',
+        'thursday': 'Четверг',
+        'friday': 'Пятница',
+        'saturday': 'Суббота',
+        'sunday': 'Воскресенье'
+    } %}
+    
+    {% for day_key, day_name in days.items() %}
+    <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px; padding: 15px; background-color: #f8f9fa; border-radius: 5px;">
+        <div style="min-width: 120px;">
+            <strong>{{ day_name }}</strong>
+        </div>
+        <div>
+            <input type="time" name="{{ day_key }}_open" value="{{ settings.work_hours[day_key].open }}" style="padding: 8px;">
+            до
+            <input type="time" name="{{ day_key }}_close" value="{{ settings.work_hours[day_key].close }}" style="padding: 8px;">
+        </div>
+        <div style="margin-left: auto;">
+            <label style="display: flex; align-items: center; gap: 5px;">
+                <input type="checkbox" name="{{ day_key }}_enabled" {% if settings.work_hours[day_key].enabled %}checked{% endif %}>
+                Работаем
+            </label>
+        </div>
+    </div>
+    {% endfor %}
+
+    <hr style="margin: 30px 0;">
+    
+    <h3>Социальные сети</h3>
+    
+    <div class="form-group">
+        <label for="vk">ВКонтакте</label>
+        <input type="url" id="vk" name="vk" class="form-control" value="{{ settings.social_links.vk }}" placeholder="https://vk.com/...">
+    </div>
+
+    <div class="form-group">
+        <label for="instagram">Instagram</label>
+        <input type="url" id="instagram" name="instagram" class="form-control" value="{{ settings.social_links.instagram }}" placeholder="https://instagram.com/...">
+    </div>
+
+    <div class="form-group">
+        <label for="telegram">Telegram</label>
+        <input type="url" id="telegram" name="telegram" class="form-control" value="{{ settings.social_links.telegram }}" placeholder="https://t.me/...">
+    </div>
+
+    <div style="display: flex; gap: 10px; margin-top: 30px;">
+        <button type="submit" class="btn btn-success">
+            <i class="fas fa-save"></i> Сохранить все настройки
+        </button>
+        <a href="{{ url_for('admin_dashboard') }}" class="btn btn-primary">
+            <i class="fas fa-arrow-left"></i> Назад в панель
+        </a>
+    </div>
+</form>
+
+<div style="margin-top: 30px; padding: 20px; background-color: #f8f9fa; border-radius: 8px;">
+    <h4>Как изменения отображаются на сайте:</h4>
+    <ul style="margin-top: 10px;">
+        <li>Телефон и адрес отображаются в шапке и футере сайта</li>
+        <li>Время работы показывается в разделе контактов</li>
+        <li>Ссылки на соцсети отображаются в футере</li>
+        <li>Все изменения применяются мгновенно</li>
+    </ul>
+</div>
+{% endblock %}

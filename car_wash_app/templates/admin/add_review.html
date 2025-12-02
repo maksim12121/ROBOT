@@ -1,0 +1,48 @@
+{% extends "admin/base.html" %}
+
+{% block title %}Добавить отзыв - РОБОТ МОЙКА ГИДРА{% endblock %}
+
+{% block page_title %}Добавить новый отзыв{% endblock %}
+
+{% block content %}
+<form method="POST" action="{{ url_for('admin_add_review') }}">
+    <div class="form-group">
+        <label for="name">Имя клиента *</label>
+        <input type="text" id="name" name="name" class="form-control" placeholder="Например: Александр Петров" required>
+    </div>
+
+    <div class="form-group">
+        <label for="text">Текст отзыва *</label>
+        <textarea id="text" name="text" class="form-control" placeholder="Текст отзыва клиента..." rows="4" required></textarea>
+    </div>
+
+    <div class="form-group">
+        <label for="rating">Оценка</label>
+        <select id="rating" name="rating" class="form-control">
+            <option value="5" selected>★★★★★ - Отлично (5)</option>
+            <option value="4">★★★★☆ - Хорошо (4)</option>
+            <option value="3">★★★☆☆ - Удовлетворительно (3)</option>
+            <option value="2">★★☆☆☆ - Плохо (2)</option>
+            <option value="1">★☆☆☆☆ - Очень плохо (1)</option>
+        </select>
+    </div>
+
+    <div style="display: flex; gap: 10px; margin-top: 20px;">
+        <button type="submit" class="btn btn-success">
+            <i class="fas fa-save"></i> Сохранить отзыв
+        </button>
+        <a href="{{ url_for('admin_reviews') }}" class="btn btn-primary">
+            <i class="fas fa-arrow-left"></i> Назад к списку
+        </a>
+    </div>
+</form>
+
+<div style="margin-top: 30px; padding: 20px; background-color: #f8f9fa; border-radius: 8px;">
+    <h4>Примеры хороших отзывов:</h4>
+    <ul style="margin-top: 10px;">
+        <li>"Отличная автомойка! Быстро, качественно и по доступной цене. Персонал вежливый и профессиональный."</li>
+        <li>"Очень довольна результатом! Машина сияет как новая. Особенно понравилась химчистка салона."</li>
+        <li>"Пользуюсь регулярно. Качество стабильно высокое. Рекомендую всем!"</li>
+    </ul>
+</div>
+{% endblock %}
