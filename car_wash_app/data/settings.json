@@ -1,0 +1,22 @@
+{
+    "site_name": "Автомойка \"На1\"",
+    "work_hours": {
+        "monday": {"open": "08:00", "close": "22:00", "enabled": true},
+        "tuesday": {"open": "08:00", "close": "22:00", "enabled": true},
+        "wednesday": {"open": "08:00", "close": "22:00", "enabled": true},
+        "thursday": {"open": "08:00", "close": "22:00", "enabled": true},
+        "friday": {"open": "08:00", "close": "22:00", "enabled": true},
+        "saturday": {"open": "09:00", "close": "20:00", "enabled": true},
+        "sunday": {"open": "09:00", "close": "20:00", "enabled": true}
+    },
+    "contact_info": {
+        "phone": "+7 (495) 123-45-67",
+        "address": "г. Москва, ул. Автомойщиков, 15",
+        "email": "info@na1-carwash.ru"
+    },
+    "social_links": {
+        "vk": "#",
+        "instagram": "#",
+        "telegram": "#"
+    }
+}
