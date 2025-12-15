@@ -1,0 +1,260 @@
+{% extends "base.html" %}
+
+{% block title %}РОБОТ МОЙКА ГИДРА - Главная{% endblock %}
+
+{% block content %}
+<header>
+    <div class="container">
+        <div class="header-content">
+            <a href="{{ url_for('index') }}" class="logo">
+                <img src="https://sun9-43.userapi.com/s/v1/ig2/G-6K0bLOH8clpjL4xrfEs8qpn65m5gqGlcHoVSo1jiFyq500ndaT4ZQodM3uD86umOpsX32n21vXxwfwDcM02eYx.jpg?quality=95&as=32x32,48x48,72x72,108x108,160x160,240x240,360x360,480x480,540x540,640x640,720x720,1080x1080,1280x1280&from=bu&cs=1280x0" alt="РОБОТ МОЙКА ГИДРА" class="logo-image">
+                РОБОТ МОЙКА ГИДРА
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('index') }}" class="active">Главная</a></li>
+                    <li><a href="{{ url_for('services') }}">Услуги</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+
+<!-- ВИДЕОФОН -->
+<section class="video-hero">
+    <video id="video-background" autoplay muted loop playsinline webkit-playsinline>
+        <!-- 1. Ваше локальное видео (главное) -->
+        <source src="{{ url_for('static', filename='videos/car_wash.mp4') }}" type="video/mp4">
+        
+        <!-- 2. Резервное онлайн-видео (если локальное не загрузится) -->
+        <source src="https://assets.mixkit.co/videos/preview/mixkit-close-up-of-a-car-wash-brush-50271-large.mp4" type="video/mp4">
+        
+        <!-- 3. Еще одно резервное видео -->
+        <source src="https://cdn.pixabay.com/vimeo/825162991/Car%20Wash%20-%20137174.mp4?width=1920" type="video/mp4">
+        
+        <!-- Фолбэк если видео не поддерживается -->
+        Ваш браузер не поддерживает видео.
+    </video>
+    
+    <div class="video-overlay"></div>
+    
+    <div class="video-hero-content">
+        <h1>моем с помощью современных технологий</h1>
+        <p>Наши преимущества: использование трёх видов химии для бережной мойки, сферическое зеркало для удобного выезда, вам не нужно выходить из автомобиля, единственная в Курске мойка дисков, мы всегда готовы выслушать ваши пожелания!</p>
+        <a href="{{ url_for('services') }}" class="btn">
+            <i class="fas fa-car"></i> Наши услуги
+        </a>
+        <!-- Кнопка для ручного запуска видео на мобильных -->
+        <button id="mobile-play-btn" class="mobile-play-btn">
+            <i class="fas fa-play"></i> Включить видео
+        </button>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="section-title">
+            <h2>Наше преимущество</h2>
+        </div>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="https://sun9-77.userapi.com/s/v1/ig2/LnONoFwomp_qLyhaRLiDLkKQaZ3oiAG9IXbTqdtqwRYpTjdkjtamQDcHQQBSbMF1fk9WrTymVXO9oSAQBipIJlNJ.jpg?quality=95&as=32x43,48x64,72x96,108x144,160x213,240x320,360x480,480x640,540x720,640x853,720x960,960x1280&from=bu&cs=960x0" alt="Автомойка">
+            </div>
+            <div class="gallery-item">
+                <img src="https://sun9-13.userapi.com/s/v1/ig2/gk0b8-xJaxCa93_n40Ir7H-A6Zdw70JNwa1S2M8GY94HhPWkW4daw44CKDoThxSDzOyVzgilCodn7cFW41cjUe2R.jpg?quality=95&as=32x43,48x64,72x96,108x144,160x213,240x320,360x480,480x640,540x720,640x853,720x960,1080x1440,1280x1707,1440x1920,1920x2560&from=bu&cs=1280x0" alt="Мойка автомобиля">
+            </div>
+            <div class="gallery-item">
+                <img src="https://sun9-86.userapi.com/s/v1/ig2/kkIfgskqNCxdGUd4CW_XwjgOr_KDrcphAUJCksLPSJSXEnR1TrxLqOU2dynhKGoLBK7w-8ZxncnhfvRYZEzAUX4b.jpg?quality=95&as=32x24,48x36,72x54,108x81,160x120,240x180,360x270,480x360,540x405,640x480,720x540,1080x810,1280x960&from=bu&cs=1280x0" alt="Чистка салона">
+            </div>
+            <!-- Новые фото чистых машин -->
+            <div class="gallery-item">
+                <img src="https://sun9-10.userapi.com/s/v1/ig2/KF3rwsPoMRStr-cbUpqCxcVin-a_q4o0d30y3t-dq7GXfIaeiW7nj3inLs3czQq5tBw1vCenJz6jikGZxd4IYM3l.jpg?quality=95&as=32x12,48x17,72x26,108x39,160x58,240x87,360x131,480x174,540x196,640x233,644x234&from=bu&cs=644x0" alt="Чистый автомобиль после мойки">
+            </div>
+            <div class="gallery-item">
+                <img src="https://sun9-85.userapi.com/s/v1/ig2/ObNh0SyVZM8HEdDHBbJEG24VAqDh_1q34RBTimY2Ul8eG6z4jxheDwD53Wf4moPcXC3uNCjEZ8GNdRGaXST917Cp.jpg?quality=95&as=32x32,48x48,72x72,108x108,160x160,240x240,360x360,447x447&from=bu&cs=447x0" alt="Блестящий кузов после полировки">
+            </div>
+            <div class="gallery-item">
+                <img src="https://sun9-8.userapi.com/s/v1/ig2/67R3S49TiTPF1zWyg-B1h738ZNnN3Jl_ed1E1ii59pFXRt8sNf7xQu0HVDrVugACCgmSvCK_mUP1bny0yAAOGT1X.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x427,720x481,737x492&from=bu&cs=737x0" alt="Идеально чистый салон">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section reviews">
+    <div class="container">
+        <div class="section-title">
+            <h2>Отзывы клиентов</h2>
+        </div>
+        <div class="reviews-container">
+            {% for review in reviews %}
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="reviewer">{{ review.name }}</div>
+                    <div class="stars">
+                        {% for i in range(5) %}
+                            {% if i < review.rating %}
+                                <i class="fas fa-star"></i>
+                            {% else %}
+                                <i class="far fa-star"></i>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="review-text">
+                    {{ review.text }}
+                </div>
+                <div class="review-date" style="margin-top: 10px; color: #888; font-size: 0.9rem;">
+                    {{ review.date }}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>О нас</h3>
+                <p>РОБОТ МОЙКА ГИДРА - это современный комплекс услуг по уходу за вашим автомобилем.</p>
+                <div class="social-links">
+                    {% if settings.social_links.vk and settings.social_links.vk != '#' %}
+                    <a href="{{ settings.social_links.vk }}" target="_blank"><i class="fab fa-vk"></i></a>
+                    {% endif %}
+                    {% if settings.social_links.instagram and settings.social_links.instagram != '#' %}
+                    <a href="{{ settings.social_links.instagram }}" target="_blank"><i class="fab fa-instagram"></i></a>
+                    {% endif %}
+                    {% if settings.social_links.telegram and settings.social_links.telegram != '#' %}
+                    <a href="{{ settings.social_links.telegram }}" target="_blank"><i class="fab fa-telegram"></i></a>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3>Контакты</h3>
+                <p><i class="fas fa-map-marker-alt"></i> {{ settings.contact_info.address }}</p>
+                <p><i class="fas fa-phone"></i> {{ settings.contact_info.phone }}</p>
+                <p><i class="fas fa-envelope"></i> {{ settings.contact_info.email }}</p>
+            </div>
+            <div class="footer-column">
+                <h3>Часы работы</h3>
+                {% set days_ru = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'] %}
+                {% set days_en = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'] %}
+                {% for i in range(7) %}
+                    {% if settings.work_hours[days_en[i]].enabled %}
+                        <p>{{ days_ru[i] }}: {{ settings.work_hours[days_en[i]].open }} - {{ settings.work_hours[days_en[i]].close }}</p>
+                    {% else %}
+                        <p>{{ days_ru[i] }}: Выходной</p>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; {{ current_year }} РОБОТ МОЙКА ГИДРА. Все права защищены.</p>
+        </div>
+    </div>
+</footer>
+
+<style>
+    /* Стили для кнопки запуска видео на мобильных */
+    .mobile-play-btn {
+        display: none;
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: linear-gradient(45deg, var(--accent), #ff6b6b);
+        color: white;
+        border: none;
+        padding: 12px 25px;
+        border-radius: 30px;
+        font-size: 14px;
+        font-weight: bold;
+        cursor: pointer;
+        z-index: 10;
+        box-shadow: 0 5px 20px rgba(231, 76, 60, 0.4);
+        transition: all 0.3s ease;
+    }
+    
+    .mobile-play-btn:hover {
+        background: linear-gradient(45deg, #ff6b6b, var(--accent));
+        transform: translateX(-50%) scale(1.05);
+    }
+    
+    .mobile-play-btn i {
+        margin-right: 8px;
+    }
+    
+    @media (max-width: 768px) {
+        .mobile-play-btn {
+            display: inline-block;
+        }
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const video = document.getElementById('video-background');
+        const playBtn = document.getElementById('mobile-play-btn');
+        
+        if (video) {
+            // Устанавливаем обязательные атрибуты для мобильных
+            video.muted = true;
+            video.playsInline = true;
+            video.setAttribute('playsinline', '');
+            video.setAttribute('webkit-playsinline', '');
+            video.setAttribute('preload', 'auto');
+            
+            // Пытаемся запустить видео автоматически
+            const playPromise = video.play();
+            
+            if (playPromise !== undefined) {
+                playPromise.then(() => {
+                    // Видео запустилось успешно - скрываем кнопку
+                    if (playBtn) playBtn.style.display = 'none';
+                }).catch(error => {
+                    // Автовоспроизведение заблокировано
+                    console.log("Автовоспроизведение заблокировано, показываем кнопку");
+                    if (playBtn) playBtn.style.display = 'inline-block';
+                });
+            }
+            
+            // Обработчик для кнопки ручного запуска
+            if (playBtn) {
+                playBtn.addEventListener('click', function() {
+                    video.play().then(() => {
+                        this.style.display = 'none';
+                    }).catch(e => {
+                        console.log("Не удалось запустить видео:", e);
+                        // Показываем сообщение пользователю
+                        this.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Нажмите на видео';
+                    });
+                });
+            }
+            
+            // Дополнительная проверка для iOS
+            if (/iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream) {
+                video.load();
+                
+                // Обход для iOS
+                document.body.addEventListener('touchstart', function() {
+                    video.play().catch(e => {
+                        if (playBtn) playBtn.style.display = 'inline-block';
+                    });
+                }, { once: true });
+            }
+            
+            // Обработка смены вкладки/фокуса
+            document.addEventListener('visibilitychange', function() {
+                if (!document.hidden) {
+                    video.play().catch(e => {
+                        if (playBtn && window.innerWidth <= 768) {
+                            playBtn.style.display = 'inline-block';
+                        }
+                    });
+                }
+            });
+        }
+    });
+</script>
+{% endblock %}

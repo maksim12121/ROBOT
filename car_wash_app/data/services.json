@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "title": "ЭКСПРЕСС",
+    "description": "Активная Химия Мойка Кузова",
+    "price": "400 руб",
+    "image": "https://avatars.mds.yandex.net/get-sprav-products/3912342/2a0000019a6d38a2244cf0ab51688852f720/orig"
+  },
+  {
+    "id": 2,
+    "title": "CТАНДАРТ",
+    "description": "Мойка Днища Активная Химия Боковая Пена Мойка Кузова",
+    "price": "500 руб.",
+    "image": "https://avatars.mds.yandex.net/get-sprav-products/3912342/2a0000019a6d38a2244cf0ab51688852f720/orig"
+  },
+  {
+    "id": 3,
+    "title": "СТАНДАРТ+",
+    "description": "Мойка Днища\r\nАктивная Химия\r\nБоковая Пена\r\nМойка Кузова\r\nВоск\r\nОсмос\r\nСушка",
+    "price": "700 руб",
+    "image": "https://avatars.mds.yandex.net/get-sprav-products/3912342/2a0000019a6d38a2244cf0ab51688852f720/orig"
+  },
+  {
+    "id": 4,
+    "title": "ПРЕМИУМ",
+    "description": "Мойка Днища\r\nАктивная Химия\r\nАктивная Химия\r\nБоковая Пена\r\nМойка Дисков\r\nМойка Кузова\r\nВоск\r\nОсмос\r\nСушка X2",
+    "price": "900 руб",
+    "image": "https://avatars.mds.yandex.net/get-sprav-products/3912342/2a0000019a6d38a2244cf0ab51688852f720/orig"
+  }
+]
